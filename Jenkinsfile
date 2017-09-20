@@ -17,7 +17,16 @@ pipeline {
             branch 'development'
          }
          steps {
-            echo "Run the development tests!
+            echo "Run the development tests!"
+         }
+      }
+      
+      stage('Masters Tests') {
+         when {
+            branch 'master'
+         }
+         steps {
+            echo "Run the master tests!"
          }
       }
 
