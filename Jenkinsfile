@@ -17,7 +17,7 @@ pipeline {
             branch 'development'
          }
          steps {
-            echo "Run the development tests!"
+            echo "Run the development tests!
          }
       }
 
