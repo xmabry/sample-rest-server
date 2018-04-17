@@ -1,10 +1,12 @@
 pipeline {
    agent any
+
    options {
       buildDiscarder(logRotator(numToKeepStr:'10'))
    }
 
    stages {
+
        stage('Development Tests') {
          when {
             beforeAgent true
@@ -15,5 +17,10 @@ pipeline {
          }
       }
 
+      stage('Build') {
+         steps {
+            sh 'mvn clean package'
+         }
+      }
    }
 }
